@@ -1,0 +1,33 @@
+<ul id="app">
+  <li class="skill-card" v-for="skill in skills" :key="skill.name">
+    {{ skill.name }}
+  </li>
+</ul>
+<style>
+  .skill-card {
+    width: 50%;
+    padding: 1rem;
+    margin: 1rem auto;
+    color: #ffffff;
+    background: #40b983;
+    box-shadow: 2px 2px 4px #ddd;
+    font-weight: bold;
+  }
+  .skill-card:hover {
+    opacity: .8;
+  }
+</style>   
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script>
+  var hobby = new Vue({
+    el: "#app",
+    data: {
+      skills: [
+        { name: "Explosion" },
+        { name: "AP-Shot" },
+        { name: "AP-Shot(Auto-Canon)" },
+        { name: "Howzer Impact" },
+      ]
+    }
+  })
+</script>
