@@ -1,0 +1,36 @@
+<div id="app">
+  <div>
+    <ul>
+      <li v-for="job in jobs" :key="job.key">
+        {{ job.name }}
+      </li>
+    </ul>
+  </div>
+  <form v-on:submit.prevent="addJob">
+    <input type="text" v-model="newJobName">
+    <input type="submit" value="jobを追加する">
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script>
+  const vm = new Vue({
+    el: "#app",
+    data: {
+      jobs: [
+        {name: "Engineer" },
+        {name: "Programmer"},
+        {name: "DataAnalyst"},
+      ],
+      newJobName: ""
+    },
+    methods: {
+      addJob: function(){
+        this.jobs.push({
+          name: this.newJobName
+        })
+        this.newJobName = ""
+      }
+    }
+  })
+</script>
